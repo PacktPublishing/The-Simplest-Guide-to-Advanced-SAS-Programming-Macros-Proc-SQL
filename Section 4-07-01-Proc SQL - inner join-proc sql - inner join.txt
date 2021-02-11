@@ -1,0 +1,16 @@
+
+/*method 1*/
+proc sql;
+create table joinedata as
+select A.name, A.age, A.weight, B.height
+from classweight as A, classheight as B
+where A.name=B.name;
+quit;
+
+/*method 2*/
+proc sql;
+create table joineddata as
+select A.name, A.age, A.weight, B.height
+from classweight as A inner join classheight as B
+on A.name=B.name;
+quit;
